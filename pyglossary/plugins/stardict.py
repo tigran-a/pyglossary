@@ -27,7 +27,7 @@ extensions = [".ifo"]
 optionsProp = {
 	"dictzip": BoolOption(),
 	"sametypesequence": StrOption(
-		values=["", "h", "m"],
+		values=["", "h", "m", "x"],
 	),
 }
 depends = {}
@@ -545,7 +545,7 @@ class Writer(object):
 			entry.detectDefiFormat()  # call no more than once
 			defiFormat = entry.getDefiFormat()
 			defiFormatCounter[defiFormat] += 1
-			if defiFormat not in ("m", "h"):
+			if defiFormat not in ("m", "h", "x"):
 				defiFormat = "m"
 
 			b_dictBlock = b""
